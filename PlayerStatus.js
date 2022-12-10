@@ -10,12 +10,20 @@ function PlayerStatus() {
   
     // Toggle between the two status values - 'away' and 'online'
     function toggleStatus() {
-      // Write your code here
+      if (status==='online'){
+        setStatus('away')
+      } else {
+        setStatus('online')
+      }
     }
     
     // Implement effect hook below.
     // Update the counter when status changes.
-    React.useEffect(() => {}); 
+    React.useEffect(() => {
+      if(status){
+        setCounter(counter+1)
+      }
+    }, status); 
   
     return (
       <div>
